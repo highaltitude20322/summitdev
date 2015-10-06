@@ -51,12 +51,12 @@ bool AppInit(int argc, char* argv[])
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
             // First part of help message is specific to bitcoind / RPC client
-            std::string strUsage = _("LiteDoge version") + " " + FormatFullVersion() + "\n\n" +
+            std::string strUsage = _("SummitCoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  litedoged [options]                     " + "\n" +
-                  "  litedoged [options] <command> [params]  " + _("Send command to -server or litedoged") + "\n" +
-                  "  litedoged [options] help                " + _("List commands") + "\n" +
-                  "  litedoged [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  summitcoind [options]                     " + "\n" +
+                  "  summitcoind [options] <command> [params]  " + _("Send command to -server or summitcoind") + "\n" +
+                  "  summitcoind [options] help                " + _("List commands") + "\n" +
+                  "  summitcoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -66,7 +66,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "litedoge:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "summitcoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
