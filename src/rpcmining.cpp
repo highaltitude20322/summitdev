@@ -104,17 +104,20 @@ Value setgenerate(const Array& params, bool fHelp)
             "Generation is limited to [genproclimit] processors, -1 is unlimited.");
 
     bool fGenerate = true;
-    //if (params.size() > 0)
-    //    fGenerate = params[0].get_bool();
-
-    //if (params.size() > 1)
-    //{
-    //    int nGenProcLimit = params[1].get_int();
-        int nGenProcLimit = 1;
+    if (params.size() > 0) {
+        if (params[0] == true) {
+            fGenerate = true;
+        } else {
+            fGenerate = false;
+        }
+    }
+    if (params.size() > 1)
+    {
+        int nGenProcLimit = params[1].get_int();
         mapArgs["-genproclimit"] = itostr(nGenProcLimit);
-    //    if (nGenProcLimit == 0)
-    //        fGenerate = false;
-    //}
+        if (nGenProcLimit == 0)
+            fGenerate = false;
+    }
     mapArgs["-gen"] = (fGenerate ? "1" : "0");
 
     assert(pwalletMain != NULL);
