@@ -663,7 +663,7 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
 void ThreadFlushWalletDB(const string& strFile)
 {
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("litedoge-wallet");
+    RenameThread("summitcoin-wallet");
 
     static bool fOneThread;
     if (fOneThread)
