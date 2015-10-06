@@ -951,39 +951,11 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
     int64_t nSubsidy = 0;
     if(nHeight < 30)
     {
-    nSubsidy = 1000 * COIN; 
+    nSubsidy = 10000 * COIN; 
     }
     else if(nHeight < 1000)
     {
-    nSubsidy = 1000000 * COIN;
-    }
-    else if(nHeight < 2000)
-    {
-    nSubsidy = 500000 * COIN;
-    }
-    else if(nHeight < 3000)
-    {
-    nSubsidy = 250000 * COIN;
-    }
-    else if(nHeight < 4000)
-    {
-    nSubsidy = 125000 * COIN;
-    }
-    else if(nHeight < 5000)
-    {
-    nSubsidy = 62500 * COIN;
-    }
-    else if(nHeight < 6000)
-    {
-    nSubsidy = 31250 * COIN;
-    }
-    else if(nHeight < 7000)
-    {
-    nSubsidy = 15625 * COIN;
-    }
-    else if(nHeight <= 8000)
-    {
-    nSubsidy = 10000 * COIN;
+    nSubsidy = 50 * COIN;
     }
 
 //LogPrint("creation", "GetProofOfWorkReward() : create=%s nSubsidy=%d\n", FormatMoney(nSubsidy), nSubsidy);
@@ -996,86 +968,8 @@ static const int g_RewardHalvingPeriod = 2000000;
 // miner's coin stake reward based on coin age spent (coin-days)
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy = 1000 * COIN;
+    int64_t nSubsidy = 50 * COIN;
 
-    if(pindexBest->nHeight < 10000)
-    {
-    nSubsidy = 100000 * COIN;
-    }
-    else if(pindexBest->nHeight < 20000)
-    {
-    nSubsidy = 50000 * COIN;
-    }
-    else if(pindexBest->nHeight < 30000)
-    {
-    nSubsidy = 25000 * COIN;
-    }
-    else if(pindexBest->nHeight < 40000)
-    {
-    nSubsidy = 12500 * COIN;
-    }
-    else if(pindexBest->nHeight < 51000)
-    {
-    nSubsidy = 10000 * COIN;
-    
-    // Subsidy is cut in half every g_RewardHalvingPeriod blocks which will occur approximately every 4 years.
-    int halvings = pindexBest->nHeight / g_RewardHalvingPeriod;
-    nSubsidy = (halvings >= 64)? 0 : (nSubsidy >> halvings);
-    nSubsidy -= nSubsidy*(pindexBest->nHeight % g_RewardHalvingPeriod)/(2*g_RewardHalvingPeriod);
-    }
-    else if(pindexBest->nHeight < 144999)
-    {
-    nSubsidy = 30000 * COIN;
-    }
-    else if(pindexBest->nHeight < 189999)
-    {
-    nSubsidy = 28000 * COIN;
-    }
-    else if(pindexBest->nHeight < 234999)
-    {
-    nSubsidy = 26000 * COIN;
-    }
-    else if(pindexBest->nHeight < 279999)
-    {
-    nSubsidy = 24000 * COIN;
-    }
-    else if(pindexBest->nHeight < 324999)
-    {
-    nSubsidy = 22000 * COIN;
-    }
-    else if(pindexBest->nHeight < 369999)
-    {
-    nSubsidy = 20000 * COIN;
-    }
-    else if(pindexBest->nHeight < 414999)
-    {
-    nSubsidy = 18000 * COIN;
-    }
-    else if(pindexBest->nHeight < 459999)
-    {
-    nSubsidy = 16000 * COIN;
-    }
-    else if(pindexBest->nHeight < 504999)
-    {
-    nSubsidy = 14000 * COIN;
-    }
-    else if(pindexBest->nHeight < 549999)
-    {
-    nSubsidy = 12000 * COIN;
-    }
-    else if(pindexBest->nHeight < 594999)
-    {
-    nSubsidy = 10000 * COIN;
-    }
-    else if(pindexBest->nHeight < 639999)
-    {
-    nSubsidy = 8000 * COIN;
-    }
-    else
-    {
-    nSubsidy = 6000 * COIN;
-    }
- 
     return nSubsidy + nFees;
 }
 
