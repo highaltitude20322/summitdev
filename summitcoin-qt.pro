@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = litedoge-qt
+TARGET = summitcoin-qt
 VERSION = 1.0.1.2
 INCLUDEPATH += src src/json src/qt
 QT += network webkit
@@ -428,7 +428,7 @@ src/qt/macnotificationhandler.mm
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
 macx:ICON = src/qt/res/icons/bitcoin.icns
-macx:TARGET = "LiteDoge-Qt"
+macx:TARGET = "SummitCoin-Qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread
