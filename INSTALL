@@ -1,9 +1,9 @@
-Building LiteDoge
+Building SummitCoin
 
-See doc/readme-qt.rst for instructions on building LiteDoge QT,
+See doc/readme-qt.rst for instructions on building SummitCoin QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of LiteDoge.
+implementation of SummitCoin.
 
-See doc/build-*.txt for instructions on building litedoged,
+See doc/build-*.txt for instructions on building summitcoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of LiteDoge.
+implementation of SummitCoin.
