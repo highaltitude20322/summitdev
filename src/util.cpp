@@ -918,7 +918,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "litedoge";
+    const char* pszModule = "summitcoin";
 #endif
     if (pex)
         return strprintf(
@@ -948,13 +948,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\LiteDoge
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\LiteDoge
-    // Mac: ~/Library/Application Support/LiteDoge
-    // Unix: ~/.litedoge
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\SummitCoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\SummitCoin
+    // Mac: ~/Library/Application Support/SummitCoin
+    // Unix: ~/.summitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "LiteDoge";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "SummitCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -966,10 +966,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "LiteDoge";
+    return pathRet / "SummitCoin";
 #else
     // Unix
-    return pathRet / ".litedoge";
+    return pathRet / ".summitcoin";
 #endif
 #endif
 }
@@ -1018,7 +1018,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "litedoge.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "summitcoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1051,7 +1051,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "litedoged.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "summitcoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
