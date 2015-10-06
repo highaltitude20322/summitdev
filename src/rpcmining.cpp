@@ -113,7 +113,7 @@ Value setgenerate(const Array& params, bool fHelp)
     }
     if (params.size() > 1)
     {
-        int nGenProcLimit = (int)params[1];
+        int nGenProcLimit = 1;
         mapArgs["-genproclimit"] = itostr(nGenProcLimit);
         if (nGenProcLimit == 0)
             fGenerate = false;
