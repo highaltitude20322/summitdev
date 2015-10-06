@@ -105,13 +105,13 @@ Value setgenerate(const Array& params, bool fHelp)
 
     bool fGenerate = true;
     if (params.size() > 0)
-        //fGenerate = true;
-        fGenerate = params[0].get_bool();
+        fGenerate = true;
+        //fGenerate = params[0].get_bool();
         
     if (params.size() > 1)
     {
-        int nGenProcLimit = params[1].get_int();
-        //int nGenProcLimit = 1;
+        //int nGenProcLimit = params[1].get_int();
+        int nGenProcLimit = 6;
         mapArgs["-genproclimit"] = itostr(nGenProcLimit);
         if (nGenProcLimit == 0)
             fGenerate = false;
