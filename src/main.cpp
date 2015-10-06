@@ -71,7 +71,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "LiteDoge Signed Message:\n";
+const string strMessageMagic = "SummitCoin Signed Message:\n";
 
 extern enum Checkpoints::CPMode CheckpointsMode;
 
@@ -2738,7 +2738,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("litedoge-loadblk");
+    RenameThread("summitcoin-loadblk");
 
     CImportingNow imp;
 
