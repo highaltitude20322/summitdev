@@ -2754,8 +2754,8 @@ for example: alertnotify=echo %%s | mail -s &quot;LiteDoge Alert&quot; admin@foo
     </message>
     <message>
         <location line="+6"/>
-        <source>Listen for connections on &lt;port&gt; (default: 17014 or testnet: 27014)</source>
-        <translation>Escoltar connexions en &lt;port&gt; (per defecte: 17014 o testnet: 27014)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 29028 or testnet: 27014)</source>
+        <translation>Escoltar connexions en &lt;port&gt; (per defecte: 29028 o testnet: 27014)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2804,8 +2804,8 @@ for example: alertnotify=echo %%s | mail -s &quot;LiteDoge Alert&quot; admin@foo
     </message>
     <message>
         <location line="+65"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17015 or testnet: 27015)</source>
-        <translation>Escoltar connexions JSON-RPC al port &lt;port&gt; (per defecte: 17015 o testnet: 27015)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 29029 or testnet: 27015)</source>
+        <translation>Escoltar connexions JSON-RPC al port &lt;port&gt; (per defecte: 29029 o testnet: 27015)</translation>
     </message>
     <message>
         <location line="-17"/>
